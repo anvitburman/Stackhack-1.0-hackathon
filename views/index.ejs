@@ -1,0 +1,141 @@
+<%- include ('partials/header') -%>
+
+<div class="container-fluid" id="grad1">
+  <div class="row justify-content-center mt-0">
+      <div class="col-11 col-sm-9 col-md-7 col-lg-6 text-center p-0 mt-3 mb-2">
+          <div class="card px-0 pt-4 pb-0 mt-3 mb-3">
+              <h2><strong>Enter Details for register yourself</strong></h2>
+              <p>Fill all form field to go to next step</p>
+              <div class="row">
+                  <div class="col-md-12 mx-0">
+                      <form id="msform" action="/new" class="" method="POST">
+                          <!-- progressbar -->
+                          <ul id="progressbar">
+                              <li class="active" id="general"><strong>General</strong></li>
+                              <li id="contact"><strong>Contact</strong></li>
+                              <li id="personal"><strong>Personal</strong></li>
+                              <li id="confirm"><strong>Confirm</strong></li>
+                              <li id="finish"><strong>Finish</strong></li>
+
+                          </ul> <!-- fieldsets -->
+                          <fieldset>
+                              <div class="form-card">
+                                  <h2 class="fs-title">General Information</h2>
+                                  <input type="text" name="name" id="name" placeholder="Enter Fullname" Required/>
+
+                                  <div class="row">
+                                      <div class="col-3"> <label for="reg_type">Registration Type*</label> </div>
+                                      <div class="col-9"> <select class="list-dt" id="reg_type" name="regtype"
+                                              onchange="changeProp();">
+
+                                              <option value="self" selected>Self</option>
+                                              <option value="group">Group</option>
+                                              <option value="corporate">Corporate</option>
+                                              <option value="others">Others</option>
+                                          </select>
+                                      </div>
+                                  </div>
+
+                              </div>
+                              <input type="button" name="next" class="next action-button" value="Next Step" Required/>
+                          </fieldset>
+                          <fieldset>
+                              <div class="form-card">
+                                  <h2 class="fs-title">Contact Information</h2>
+                                  <input type="number" id="mobile" name="mobileno" placeholder="Contact No." />
+                                  <input type="email" id="email" name="email" placeholder="Email" />
+                              </div> <input type="button" name="previous" class="previous action-button-previous"
+                                  value="Previous" /> <input type="button" name="next" class="next action-button"
+                                  value="Next Step" />
+                          </fieldset>
+                          <fieldset>
+                              <div class="form-card">
+                                  <h2 class="fs-title">Personal Information</h2>
+
+                                  <div class="row mt-3">
+                                      <div class="col-md-4">
+                                          <label for="ticket">Number of ticket</label>
+                                      </div>
+                                      <div class="col-md-8">
+                                          <input type="number" class="form-control" name="tickets" id="ticket"
+                                              value="1" readonly placeholder="Enter Required Number of Ticket">
+                                      </div>
+                                  </div>
+                                  <div class="row mt-3">
+                                      <div class="col-md-4">
+                                          <label for="docs">Choose Identity(*.jpg/.png)</label>
+                                      </div>
+                                      <div class="col-md-8">
+                                          <input type="file" id="docs" name="regid" class="form-control" accept="image/*" Required>
+                                      </div>
+                                  </div>
+
+                              </div> <input type="button" name="previous" class="previous action-button-previous"
+                                  value="Previous" /> <input type="button" name="nextbtn"
+                                  class="next action-button" value="Next" />
+                          </fieldset>
+                          <fieldset id="view">
+                              <div class="form-card">
+                                  <h2 class="fs-title">Preview Information</h2>
+                                  <div class="row">
+                                      <div class="col-md-4 col-lg-4 col-sm-4">
+                                          <p><img id="getImg" width="200"  /></p>
+                                      </div>
+                                      <div class="col-md-8 col-lg-8 col-sm-8">
+                                          <table class="ml-4" style="width: 100%;">
+                                              <tr>
+                                                  <td>Name :</td>
+                                                  <td id="getName"></td>
+                                              </tr>
+                                              <tr>
+                                                  <td>Email :</td>
+                                                  <td id="getEmail"></td>
+                                              </tr>
+                                              <tr>
+                                                  <td>Mobile :</td>
+                                                  <td id="getMobile"></td>
+                                              </tr>
+                                              <tr>
+                                                  <td>Registration type:</td>
+                                                  <td id="getRegType"></td>
+                                              </tr>
+                                              <tr>
+                                                  <td>Number of tickets:</td>
+                                                  <td id="getNoTickets"></td>
+                                              </tr>
+                                          </table>
+                                      </div>
+                                  </div>
+
+
+                              </div> 
+                              <input type="button" name="previous" class="previous action-button-previous"
+                                  value="Previous" /> 
+                                  
+                                  <button name="confirmbtn" type="submit" class="next action-button " >Confirm</button>
+                          </fieldset>
+                          <fieldset>
+                              <div class="form-card">
+                                  <h2 class="fs-title text-center">Success !</h2> <br><br>
+                                  <div class="row justify-content-center">
+                                      <div class="col-3"> <img src="/stylesheet/images/tick3.gif" class="fit-image"> </div>
+                                  </div> <br><br>
+                                  <div class="row justify-content-center">
+                                      <div class="col-7 text-center">
+                                          <h5>You Have Successfully Registered</h5>
+                                          <p>
+                                            
+                                          </p>
+                                          <a href="/new">New Registration</a>
+                                      </div>
+                                  </div>
+                              </div>
+                          </fieldset>
+                      </form>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>
+</div>
+<%- include ('partials/footer') -%>
